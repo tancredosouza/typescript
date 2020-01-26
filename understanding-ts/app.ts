@@ -1,11 +1,7 @@
-let firstValue = document.getElementById("first_value") as HTMLInputElement;
-let secondValue = document.getElementById("second_value") as HTMLInputElement;
-let button = document.getElementById("button") as HTMLButtonElement;
-
-function addTwoNumbers(firstValue: number, secondValue: number) {
-  return firstValue + secondValue;
+const person = {
+  name: 'Tantan',
+  age: '22',
+  hobbies: ['Singing', 'Climbing', 'Typescript']
 }
 
-function myFunction() {
-  console.log(addTwoNumbers(+firstValue.value, +secondValue.value));
-}
+console.log(person.hobbies)
