@@ -13,3 +13,8 @@ function generateError(message: string, code: number): never {
 }
 
 generateError("Potato", 42);
+
+function infiniteLoop(): number {
+  while (true) {}
+  return 1;
+}
