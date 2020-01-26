@@ -1,21 +1,15 @@
-function add(n1: number, n2: number): number {
-  return n1 + n2;
+let userInput: unknown;
+let userName: string;
+
+userInput = 5;
+userInput = "Tantan";
+
+if (typeof userInput === "string") {
+  userName = userInput;
 }
 
-function addWithCallback(
-  n1: number,
-  n2: number,
-  callback: (n: number) => number
-) {
-  const result = n1 + n2;
-  const resultSuccessor = callback(result);
-
-  return resultSuccessor;
+function generateError(message: string, code: number): never {
+  throw { message: message, errorCode: code };
 }
 
-console.log(
-  addWithCallback(10, 20, (n: number) => {
-    console.log(n);
-    return n + 1;
-  })
-);
+generateError("Potato", 42);
