@@ -11,3 +11,7 @@ function applyThreeTimes(
 }
 
 console.log(applyThreeTimes(3, 5, add));
+
+const addCurrying = (n: number) => (a: number) => add(a, n);
+
+console.log(addCurrying(3)(1));
