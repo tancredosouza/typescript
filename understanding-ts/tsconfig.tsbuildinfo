@@ -1,0 +1,52 @@
+{
+  "program": {
+    "fileInfos": {
+      "../../../../../usr/local/cellar/typescript/3.7.5/libexec/lib/node_modules/typescript/lib/lib.d.ts": {
+        "version": "49ff9798f592c8b7e628fd881401e68810c1b3589ecd7a41b32b3c287374cde0",
+        "signature": "49ff9798f592c8b7e628fd881401e68810c1b3589ecd7a41b32b3c287374cde0"
+      },
+      "../../../../../usr/local/cellar/typescript/3.7.5/libexec/lib/node_modules/typescript/lib/lib.es5.d.ts": {
+        "version": "fc43680ad3a1a4ec8c7b8d908af1ec9ddff87845346de5f02c735c9171fa98ea",
+        "signature": "fc43680ad3a1a4ec8c7b8d908af1ec9ddff87845346de5f02c735c9171fa98ea"
+      },
+      "../../../../../usr/local/cellar/typescript/3.7.5/libexec/lib/node_modules/typescript/lib/lib.dom.d.ts": {
+        "version": "d93de5e8a7275cb9d47481410e13b3b1debb997e216490954b5d106e37e086de",
+        "signature": "d93de5e8a7275cb9d47481410e13b3b1debb997e216490954b5d106e37e086de"
+      },
+      "../../../../../usr/local/cellar/typescript/3.7.5/libexec/lib/node_modules/typescript/lib/lib.webworker.importscripts.d.ts": {
+        "version": "fe4e59403e34c7ff747abe4ff6abbc7718229556d7c1a5b93473fb53156c913b",
+        "signature": "fe4e59403e34c7ff747abe4ff6abbc7718229556d7c1a5b93473fb53156c913b"
+      },
+      "../../../../../usr/local/cellar/typescript/3.7.5/libexec/lib/node_modules/typescript/lib/lib.scripthost.d.ts": {
+        "version": "b9faa17292f17d2ad75e34fac77dd63a6403af1dba02d39cd0cbb9ffdf3de8b9",
+        "signature": "b9faa17292f17d2ad75e34fac77dd63a6403af1dba02d39cd0cbb9ffdf3de8b9"
+      },
+      "./src/app.ts": {
+        "version": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "signature": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "options": {
+      "incremental": true,
+      "target": 1,
+      "module": 1,
+      "outDir": "./dst",
+      "rootDir": "./src",
+      "strict": true,
+      "esModuleInterop": true,
+      "forceConsistentCasingInFileNames": true,
+      "configFilePath": "./tsconfig.json"
+    },
+    "referencedMap": {},
+    "exportedModulesMap": {},
+    "semanticDiagnosticsPerFile": [
+      "../../../../../usr/local/cellar/typescript/3.7.5/libexec/lib/node_modules/typescript/lib/lib.d.ts",
+      "./src/app.ts",
+      "../../../../../usr/local/cellar/typescript/3.7.5/libexec/lib/node_modules/typescript/lib/lib.es5.d.ts",
+      "../../../../../usr/local/cellar/typescript/3.7.5/libexec/lib/node_modules/typescript/lib/lib.dom.d.ts",
+      "../../../../../usr/local/cellar/typescript/3.7.5/libexec/lib/node_modules/typescript/lib/lib.webworker.importscripts.d.ts",
+      "../../../../../usr/local/cellar/typescript/3.7.5/libexec/lib/node_modules/typescript/lib/lib.scripthost.d.ts"
+    ]
+  },
+  "version": "3.7.5"
+}
