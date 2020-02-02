@@ -16,7 +16,7 @@ const addCurrying = (n: number) => (a: number) => add(a, n);
 
 console.log(addCurrying(3)(1));
 
-function addWithDefaultValue(a: number, b:number = 3) {
+function addWithDefaultValue(a: number, b: number = 3) {
   return a + b;
 }
 
