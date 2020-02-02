@@ -21,3 +21,10 @@ function addWithDefaultValue(a: number, b: number = 3) {
 }
 
 console.log(addWithDefaultValue(5));
+
+const person = {
+  name: "Tantan",
+  age: 22
+};
+
+const otherPerson = { ...person };
