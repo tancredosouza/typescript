@@ -1,6 +1,6 @@
-const add = (a: number, b: number) => {
+function add(a: number, b: number) {
   return a + b;
-};
+}
 
 function applyThreeTimes(
   a: number,
@@ -28,3 +28,24 @@ const person = {
 };
 
 const otherPerson = { ...person };
+
+function addMultipleNumbers(...numbers: number[]) {
+  const otherResult = myReduce(add, numbers);
+
+  return otherResult;
+}
+
+console.log(addMultipleNumbers(3, 7, 1, 2));
+
+function myReduce(
+  callback: (a: number, b: number) => number,
+  numbers: number[]
+): number {
+  if (numbers.length == 0) {
+    return 0;
+  } else {
+    const [head, ...tail] = numbers;
+
+    return callback(head, myReduce(callback, tail));
+  }
+}
