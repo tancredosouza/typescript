@@ -1,15 +1,37 @@
 // Code goes here!
-const PROJECT_INPUT_ID = "project-input";
+const PROJECT_INPUT_ID: string = "project-input";
 const SINGLE_PROJECT_ID = "single-project";
 const PROJECT_LIST_ID = "project-list";
 
-function displayTemplateOnWebPage(templateId: string) {
-  let element = document.getElementById(templateId) as HTMLTemplateElement;
-  let clone = element.content.cloneNode(true);
+let templateElement = document.getElementById(
+  PROJECT_INPUT_ID
+) as HTMLTemplateElement;
+let clone = templateElement.content.cloneNode(true);
 
-  document.body.appendChild(clone);
+//document.body.appendChild(clone);
+
+// displayTemplateOnWebPage(SINGLE_PROJECT_ID);
+// displayTemplateOnWebPage(PROJECT_LIST_ID);
+
+class Project {
+  constructor(
+    public title: string,
+    public description: string,
+    public teamSize: number
+  ) {}
 }
 
-displayTemplateOnWebPage(PROJECT_INPUT_ID);
-displayTemplateOnWebPage(SINGLE_PROJECT_ID);
-displayTemplateOnWebPage(PROJECT_LIST_ID);
+// When user presses 'Add project' button, should output project to console
+let projectSubmissionForm = document.createElement("form");
+projectSubmissionForm.append(templateElement.content.cloneNode(true));
+
+let submitProjectButton = projectSubmissionForm.getElementsByTagName(
+  "button"
+)[0] as HTMLButtonElement;
+
+submitProjectButton.addEventListener("click", function() {
+  console.log("Clicked!");
+});
+
+// render web page
+document.body.append(projectSubmissionForm);
