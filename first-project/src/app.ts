@@ -1,10 +1,66 @@
-// Code goes here!
+const projects: Project[] = [];
+
 const PROJECT_INPUT_ID: string = "project-input";
 
-let templateElement = document.getElementById(
-  PROJECT_INPUT_ID
-) as HTMLTemplateElement;
-let clone = templateElement.content.cloneNode(true);
+const projectSubmissionForm = renderFormFromTemplateWithId(PROJECT_INPUT_ID);
+const singleProjectTemplate = getTemplateFromId("single-project");
+
+function renderFormFromTemplateWithId(id: string) {
+  let templateElement = getTemplateFromId(id);
+  let formCanvas = document.createElement("form");
+
+  formCanvas.append(templateElement);
+
+  return formCanvas;
+}
+
+function getTemplateFromId(id: string): Node {
+  let templateElement = document.getElementById(id) as HTMLTemplateElement;
+  let clone = templateElement.content.cloneNode(true);
+
+  return clone;
+}
+
+setupAddProjectButton();
+
+function setupAddProjectButton(): void {
+  let submitProjectButton = projectSubmissionForm.getElementsByTagName(
+    "button"
+  )[0] as HTMLButtonElement;
+
+  submitProjectButton.addEventListener("click", createAndSaveProject);
+}
+
+function createAndSaveProject(): void {
+  const projectFromUserInput = createProjectFromUserInput();
+
+  projects.push(projectFromUserInput);
+}
+
+function createProjectFromUserInput(): Project {
+  const FORM_CLASS: string = ".form-control";
+  const divs = projectSubmissionForm.querySelectorAll(FORM_CLASS);
+
+  const TITLE_INDEX = 0;
+  const title: string = divs[TITLE_INDEX].getElementsByTagName("input")[0]
+    .value;
+
+  const DESCRIPTION_INDEX = 1;
+  const description: string = divs[DESCRIPTION_INDEX].getElementsByTagName(
+    "textarea"
+  )[0].value;
+
+  const TEAM_SIZE_INDEX = 2;
+  const teamSize: number = +divs[TEAM_SIZE_INDEX].getElementsByTagName(
+    "input"
+  )[0].value;
+
+  return new Project(title, description, teamSize);
+}
+
+document.body.append(projectSubmissionForm);
+
+// Classes definition
 
 class Project {
   constructor(
@@ -13,28 +69,3 @@ class Project {
     public teamSize: number
   ) {}
 }
-
-// When user presses 'Add project' button, should output project to console
-let projectSubmissionForm = document.createElement("form");
-projectSubmissionForm.append(templateElement.content.cloneNode(true));
-
-let submitProjectButton = projectSubmissionForm.getElementsByTagName(
-  "button"
-)[0] as HTMLButtonElement;
-
-function createProjectFromUserInput() {
-  let divs = projectSubmissionForm.querySelectorAll(".form-control");
-
-  let title: string = divs[0].getElementsByTagName("input")[0].value;
-  let description: string = divs[1].getElementsByTagName("textarea")[0].value;
-  let teamSize: number = +divs[2].getElementsByTagName("input")[0].value;
-
-  console.log(title);
-  console.log(description);
-  console.log(teamSize);
-}
-
-submitProjectButton.addEventListener("click", createProjectFromUserInput);
-
-// render web page
-document.body.append(projectSubmissionForm);
